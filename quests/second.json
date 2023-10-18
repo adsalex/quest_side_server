@@ -1,0 +1,81 @@
+{
+  
+  
+  "music":["sr2.mp4","human.mp4"],
+  "description":"дорога к победе ждет тебя",
+  "variables":
+  {
+      "visible":{"room":"22","kll":"33"},
+      "hidden":{}
+  },
+  "start_from":"main_room",
+  "rooms":
+  {
+      "main_room":
+      {"text":"горит метан у вас в мыслях<$ins>kll<$ins> <$ins>room<$ins>","image":"/human.mp4","isvid":0,
+      "options":[
+          {"text":"перейти на кухню","move":"kitchen","stringf":[{"va":"<$ins>room","vb":"33","operator":"+","write_to":"room"},{"va":"<$ins>room","vb":"33","operator":"+","write_to":"room"}]
+         },
+          {"text":"перейти в ванную <$ins>kll<$ins>", 
+          "ifsw":[{"a_val":"<$ins>room","b_val":"22", "operator":"=",
+            "then":{"move":"balcony","change":[{"cell":"room","value":"22"},{"cell":"kll","value":"kithcen 453"}]},
+            "qelse":{"move":"balcony","change":[{"cell":"room","value":"22"}]}
+          },
+          {"a_val":"<$ins>room","b_val":"22", "operator":"=",
+          "then":
+          {
+            "ifsw":[{"a_val":"<$ins>room","b_val":"22", "operator":"=",
+            "then":{"move":"main_room","change":[{"cell":"kick","value":"kithcen 9990"},{"cell":"kll","value":"kithcen 453"}]},
+            "qelse":{"move":"balcony","change":[{"cell":"kick","value":"kithcen 99977"}]}}]
+          },
+          "qelse":{"move":"balcony","change":[{"cell":"room","value":"kithcen 778"}]}
+          }
+        ],
+          "move":"balcony","change":[{"cell":"room","value":"kithcen 333"}] },
+          
+          {"text":"перейти в спальню",
+            "qswitch":[
+            {
+              "cell":"room",
+              "cases":{
+                "22":{"move":"kitchen","change":{"cell":"room","value":"swi223399"}},
+                "33":{"move":"kitchen","change":{"cell":"room","value":"sih 33uu77"}},
+                "44":{"move":"kitchen","change":{"cell":"room","value":"sw 889hgfgg"}}},
+              "qdefault":{"move":"kitchen","change":{"cell":"room","value":"default vcase"}}
+            },
+            {
+              "cell":"room",
+              "cases":{
+                "22":{"move":"kitchen","change":{"cell":"room","value":"swi223399"}},
+                "33":{"move":"kitchen","change":{"cell":"room","value":"sih 33uu77"}},
+                "44":{"move":"kitchen","change":{"cell":"room","value":"sw 889hgfgg"}}},
+              "qdefault":{"move":"kitchen","change":{"cell":"room","value":"default vcase"}}
+            }
+          ]
+          }
+     ]},
+      "kitchen":
+      {"text":"кухня, пахнет горелым","image":"logo192.png",
+      "options":[
+          {"text":"перейти в гостинную"},
+          {"text":"перейти в ванную"},
+          {"text":"перейти в спальню"}
+     ]},
+      "balcony":
+      {"text":"ой это балкон","image":"",
+      "options":[
+          {"text":"перейти на кухню"},
+          {"text":"перейти в ванную"},
+          {"text":"перейти в спальню"}
+     ]},
+      "garage":{},
+      "final":{},
+      "bedroom":
+      {"text":"спальня, обычная, как мне видно","image":"",
+      "options":[
+          {"text":"перейти на кухню"},
+          {"text":"перейти в ванную"},
+          {"text":"перейти в спальню"}
+     ]}
+  }
+}
